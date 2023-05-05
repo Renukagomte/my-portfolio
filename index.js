@@ -25,13 +25,12 @@ mongoose.connection.on("error", err => {
     console.log("DB CONNECTION ERROR", err)
 })
 
-
+app.use("*", (req, res) => {
+    res.sendFile("public/index.html")
+})
 app.listen(process.env.PORT || 5000, err => {
     if (err) {
         return console.log("UNABLE TO START SERVER", err);
     }
     console.log(`SERVER RUNNING ON http://localhost:${process.env.PORT || 5000}`);
-})
-app.use("*", (req, res) => {
-    res.sendFile("public/index.html")
 })
