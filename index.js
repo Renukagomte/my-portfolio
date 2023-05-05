@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(express.static("public"))
 app.use(cors({
     // origin:"http://localhost:5173",
-    origin: "https://my-portfolio-production-d0a6.up.railway.app/",
+    origin: "https://my-portfolio-production-d0a6.up.railway.app",
     credentials: true
 }))
 app.use("/contact", require("./routes"))
