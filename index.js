@@ -16,9 +16,7 @@ app.use(cors({
 }))
 app.use("/contact", require("./routes"))
 
-app.use("*",(req,res) =>{
-    res.sendFile("public/index.html")
-})
+
 
 mongoose.connection.once("open", () => {
     console.log("DB CONNECTED");
@@ -27,7 +25,9 @@ mongoose.connection.on("error", err => {
     console.log("DB CONNECTION ERROR", err)
 })
 
-
+app.use("*",(req,res) =>{
+    res.sendFile("public/index.html")
+})
 app.listen(process.env.PORT || 5000, err => {
     if (err) {
         return console.log("UNABLE TO START SERVER", err);
