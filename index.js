@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(express.static("public"))
 app.use(cors({
     // origin:"http://localhost:5173",
-    origin: "https://my-portfolio-production-d01f.up.railway.app",
+    origin: "https://portfolio-kxjs.onrender.com/",
     credentials: true
 }))
 app.use("/contact", require("./routes"))
